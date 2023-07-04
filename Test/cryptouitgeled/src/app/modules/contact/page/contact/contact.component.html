@@ -1,0 +1,133 @@
+<div class="wrapper">
+  <div class="content-wrap">
+    <div class="layout-center">
+      <div class="form-wrap">
+        <div class="form-block col-md-12">
+          <!-- Contact -->
+          <h2 class="sub-title">Contact</h2>
+          <form
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            class="contact"
+          >
+            <div class="form-item">
+              <label for="">Email</label>
+              <input
+                type="text"
+                name="email"
+                formControlName="email"
+                [ngClass]="{
+                  'is-invalid': isSubmitted && contactFormControls.email.errors
+                }"
+                required
+              />
+              <div
+                *ngIf="
+                  isSubmitted &&
+                  contactFormControls.email.invalid &&
+                  (contactFormControls.email.dirty ||
+                    contactFormControls.email.touched)
+                "
+                class="invalid-feedback"
+              >
+                <div *ngIf="contactFormControls.email.errors.required">
+                  Email is verplicht
+                </div>
+                <div *ngIf="contactFormControls.email.errors.pattern">
+                  Email staat niet in correct formaat
+                </div>
+              </div>
+            </div>
+
+            <div class="form-item">
+              <label for="">Onderwerp</label>
+              <input
+                type="text"
+                name="subject"
+                formControlName="subject"
+                [ngClass]="{
+                  'is-invalid':
+                    isSubmitted && contactFormControls.subject.errors
+                }"
+                required
+              />
+              <div
+                *ngIf="
+                  isSubmitted &&
+                  contactFormControls.subject.invalid &&
+                  (contactFormControls.email.dirty ||
+                    contactFormControls.subject.touched)
+                "
+                class="invalid-feedback"
+              >
+                <div *ngIf="contactFormControls.subject.errors.required">
+                  Onderwerp is verplicht
+                </div>
+              </div>
+            </div>
+
+            <div class="form-item">
+              <label for="">Bericht</label>
+              <textarea
+                id="edit-message"
+                name="message"
+                formControlName="message"
+                rows="5"
+                cols="60"
+                class="form-textarea required resize-vertical"
+                required
+                [ngClass]="{
+                  'is-invalid':
+                    isSubmitted && contactFormControls.message.errors
+                }"
+              ></textarea>
+              <div
+                *ngIf="
+                  isSubmitted &&
+                  contactFormControls.message.invalid &&
+                  (contactFormControls.message.dirty ||
+                    contactFormControls.message.touched)
+                "
+                class="invalid-feedback"
+              >
+                <div *ngIf="contactFormControls.message.errors.required">
+                  Bericht is verplicht
+                </div>
+              </div>
+            </div>
+
+            <div class="form-item">
+              <button
+                *ngIf="!isSuccessVerzonden"
+                class="btn btn-verzenden"
+                type="submit"
+                [disabled]="!contactForm.valid || isLoading"
+              >
+                Verzenden
+              </button>
+              <p *ngIf="isSuccessVerzonden">Uw bericht werd succesvol verzonden!</p>
+              <img
+                *ngIf="isLoading"
+                class="pl-2"
+                src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+              />
+            </div>
+          </form>
+          <!-- Error -->
+          <div *ngIf="serverError" class="alert alert-danger" role="alert">
+            <p id="generalError">
+              Er is iets misgegaan
+            </p>
+          </div>
+        </div>
+        <!-- Contact Info -->
+        <div class="address-block col-md-12">
+          <h2 class="sub-title">Contact Info</h2>
+          <ul>
+            <li>contactcryptouitgelegd@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

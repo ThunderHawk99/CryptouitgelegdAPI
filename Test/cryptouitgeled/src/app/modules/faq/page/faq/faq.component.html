@@ -1,0 +1,180 @@
+<section
+  class="accordion-section clearfix mt-3 disable-text-selection"
+  aria-label="Question Accordions"
+>
+  <div class="container margin">
+    <h2>Frequently Asked Questions</h2>
+
+    <!-- Student -->
+    <h3>{{ "faq.titelstudent" | translate }}</h3>
+    <mat-accordion
+      class="panel-group"
+      id="accordion"
+      role="tablist"
+      aria-multiselectable="true"
+    >
+      <div class="panel panel-default">
+        <!-- Vraag 1 -->
+        <mat-expansion-panel class="panel-heading p-3 mb-3" role="tab">
+          <mat-expansion-panel-header class="panel-title">
+            <a class="collapsed" role="button" title="">
+              <p>{{ "faq.vraagaccstud" | translate }}</p>
+            </a>
+          </mat-expansion-panel-header>
+          <div>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoordaccstud" | translate }}
+            </p>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- Vraag 2 -->
+        <mat-expansion-panel class="panel-heading p-3 mb-3" role="tab">
+          <mat-expansion-panel-header class="panel-title">
+            <a class="collapsed" role="button" title="">
+              <p>{{ "faq.vraagfilter" | translate }}</p>
+            </a>
+          </mat-expansion-panel-header>
+          <div>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoordfilter" | translate }}
+            </p>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoordfilter2" | translate }}
+            </p>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- Vraag 3 -->
+        <mat-expansion-panel class="panel-heading p-3 mb-3" role="tab">
+          <mat-expansion-panel-header class="panel-title">
+            <a class="collapsed" role="button" title="">
+              <p>{{ "faq.vraagapply" | translate }}</p>
+            </a>
+          </mat-expansion-panel-header>
+          <div>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoordapply" | translate }}
+            </p>
+          </div>
+        </mat-expansion-panel>
+      </div>
+    </mat-accordion>
+
+    <!-- Bedrijf -->
+    <h3>{{ "faq.titelbedrijf" | translate }}</h3>
+    <mat-accordion
+      class="panel-group"
+      id="accordion"
+      role="tablist"
+      aria-multiselectable="true"
+    >
+      <div class="panel panel-default">
+        <mat-expansion-panel class="panel-heading p-3 mb-3" role="tab">
+          <mat-expansion-panel-header class="panel-title">
+            <a class="collapsed" role="button" title="">
+              <p>{{ "faq.vraagaccbedr" | translate }}</p>
+            </a>
+          </mat-expansion-panel-header>
+          <div>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoordaccbedr" | translate }}
+            </p>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="panel-heading p-3 mb-3" role="tab">
+          <mat-expansion-panel-header class="panel-title">
+            <a class="collapsed" role="button" title="">
+              <p>{{ "faq.vraaguploadvac" | translate }}</p>
+            </a>
+          </mat-expansion-panel-header>
+          <div>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoorduploadvac" | translate }}
+            </p>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoorduploadvac2" | translate }}
+            </p>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoorduploadvac3" | translate }}
+            </p>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="panel-heading p-3 mb-3" role="tab">
+          <mat-expansion-panel-header class="panel-title">
+            <a class="collapsed" role="button" title="">
+              <p>{{ "faq.vraagopwebsite" | translate }}</p>
+            </a>
+          </mat-expansion-panel-header>
+          <div>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoordopwebsite" | translate }}
+            </p>
+          </div>
+        </mat-expansion-panel>
+      </div>
+    </mat-accordion>
+
+    <!-- Algemeen -->
+    <h3>{{ "faq.titelalgemeen" | translate }}</h3>
+    <mat-accordion
+      class="panel-group"
+      id="accordion"
+      role="tablist"
+      aria-multiselectable="true"
+    >
+      <div class="panel panel-default">
+        <mat-expansion-panel class="panel-heading p-3 mb-3" role="tab">
+          <mat-expansion-panel-header class="panel-title">
+            <a class="collapsed" role="button" title="">
+              <p>{{ "faq.vraagww" | translate }}</p>
+            </a>
+          </mat-expansion-panel-header>
+          <div>
+            <p class="panel-body px-3 mb-4 white">
+              {{ "faq.antwoordww" | translate }}
+            </p>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="panel-heading p-3 mb-3" role="tab">
+          <mat-expansion-panel-header class="panel-title">
+            <a class="collapsed" role="button" title="">
+              <p>{{ "faq.verschilgb" | translate }}</p>
+            </a>
+          </mat-expansion-panel-header>
+          <div style="margin-top: 15px">
+            <div>
+              <p class="panel-body px-3 mb-4 white">
+                {{ "faq.antwoordgb" | translate }}
+              </p>
+              <p class="panel-body px-3 mb-4 white">
+                {{ "faq.antwoordgb2" | translate }}
+              </p>
+              <p class="panel-body px-3 mb-4 white">
+                {{ "faq.antwoordgb3" | translate }}
+              </p>
+              <img
+                class="img-fluid rounded mb-3 mb-md-0"
+                src="../../../../../assets/images/opleidingniveaus.png"
+              />
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="panel-heading p-3 mb-3" role="tab">
+          <mat-expansion-panel-header class="panel-title">
+            <a class="collapsed" role="button" title="">
+              <p>{{ "faq.questionNotFound" | translate }}</p>
+            </a>
+          </mat-expansion-panel-header>
+          <div>
+            <a class="panel-body px-3 mb-4 white" routerLink="/contact">
+              <p>
+                {{ "faq.questionNotFoundAnswer" | translate }}
+              </p>
+            </a>
+          </div>
+        </mat-expansion-panel>
+      </div>
+    </mat-accordion>
+  </div>
+</section>

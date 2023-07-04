@@ -1,0 +1,133 @@
+//Google fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900");
+
+//layout
+* {
+  margin: 0;
+  padding: 0;
+}
+.layout-center {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+.wrapper {
+  font: 300 16px/24px "Roboto", sans-serif;
+  margin-top: 100px;
+}
+
+.content-wrap {
+  padding-bottom: 50px;
+  .form-wrap {
+    //display: flex;
+    //flex-direction: row;
+    //flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    box-shadow: 0px 0px 30px #b7b7b7;
+    position: relative;
+    background: #fff;
+
+    h2.sub-title {
+      font-size: 21px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      color: #007bff;
+    }
+    .form-block {
+      box-sizing: border-box;
+      padding: 40px;
+      //width: 70%;
+    }
+    .address-block {
+      background: rgb(22,29,63);
+      box-sizing: border-box;
+      color: #fff;
+      padding: 40px;
+      //width: 30%;
+
+      h2.sub-title {
+        color: #fff;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          display: block;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+//form
+.form-item {
+  margin-bottom: 10px;
+  //width: 50%;
+  label {
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6a7986;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  textarea {
+    border: 1px solid #dddddd;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .btn-verzenden {
+    //letter-spacing: 0.05rem;
+    padding: 8px 20px;
+    border-radius: 40px;
+    background: #007bff;
+    border: none;
+    outline: none;
+    transition: transform 0.2s;
+    color: white;
+  }
+
+  .btn-verzenden:hover,
+  .btn-verzenden:focus {
+    transform: scale(1.1);
+    outline: 0;
+  }
+
+  .btn-verzenden:active {
+    background-color: #007bff;
+    border: none;
+    outline: none;
+  }
+}
+
+.contact input:invalid {
+  border-left: 2px solid red;
+}
+
+.contact input:dirty {
+  border-left: 2px solid red;
+}
+
+.contact textarea:invalid {
+  border-left: 2px solid red;
+}
+
+#generalError {
+  padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    margin-top: 0px;
+  }
+}

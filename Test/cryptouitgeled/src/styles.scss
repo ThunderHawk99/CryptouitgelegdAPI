@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~@ng-select/ng-select/themes/material.theme.css";
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    
+    margin-bottom: 30px;
+}
+
+h1{
+    font-size: 36px;
+    margin-top: 30px;
+}
+
+h2{
+    font-size: 26px;
+}
+
+h3{
+    font-size: 18px;
+}
+
+.removeMarginbottom{
+    margin-bottom: 0;
+}
+
+
+.material-icons {
+    cursor: pointer;
+}
+  

@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput placeholder="Title" [formControl]="title">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Image</mat-label>
+            <input matInput placeholder="Image" [formControl]="image" value="Image">
+          </mat-form-field>
+      
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Article</mat-label>
+          <textarea cdkTextareaAutosize="true" [formControl]="article" matInput placeholder="Article"></textarea>
+        </mat-form-field>
+
+        
+      </form>
+      <button (click)="onSubmit()" class="btn btn-primary">
+        Submit
+    </button>
+</div>

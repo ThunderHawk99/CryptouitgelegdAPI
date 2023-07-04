@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <!-- Hamburger Icon -->
+  <button
+    class="navbar-toggler hamburger"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="openDropdown()"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a
+  routerLink="/"
+  class="navbar-brand vives_logo"
+  title="Home"
+  rel="home"
+  (click)="onActivate()"
+  ></a>
+<div class="collapse navbar-collapse" id="navbarNavDropdown" *ngIf="navbarOpen">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a (click)="onActivate()" class="nav-link" routerLink="/articles" routerLinkActive="active">Academie <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a (click)="onActivate()" class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+    </li>
+    <li class="nav-item active">
+      <a (click)="onActivate()" class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ</a>
+    </li>
+    <li *ngIf="isAdmin()" class="nav-item active">
+      <a (click)="onActivate()" class="nav-link" routerLink="/articles/create" routerLinkActive="active">Create</a>
+    </li>
+    <li *ngIf="isAdmin()" class="nav-item active">
+      <a (click)="onActivate()" class="nav-link" routerLink="/articles/test" routerLinkActive="active">Test</a>
+    </li>
+  </ul>
+</div>
+
+<div class="collapse navbar-collapse authContainer" id="navbarNavDropdown" *ngIf="navbarOpen">
+  <ul class="navbar-nav">
+      <a *ngIf="!currentUser" class="btn btnLogin" routerLink="/authentication" routerLinkActive="active">Login</a>
+      <a *ngIf="!currentUser" class="btn btn-primary" routerLink="/authentication/register" routerLinkActive="active">Registreren</a>
+      <div (mouseover)="showDropdownProfile()"  *ngIf="currentUser" class="dropdown">
+        <h3 (mouseover)="showDropdownProfile()" (mouseout)="hideDropdownProfile()" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" *ngIf="currentUser">{{displayName}}</h3>
+        <div *ngIf="showProfileDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a (mouseout)="hideDropdownProfile()" class="dropdown-item" (click)="logOut()">Logout</a>
+        </div>
+      </div>
+  </ul>
+  
+</div>
+</nav>

@@ -1,0 +1,65 @@
+/* Declaraties colors */
+
+$rood: #e50001;
+$wit: white;
+$grijs: gray;
+$lichtgrijs: #EFEEE9;
+
+nav a{
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.vives_logo {
+  color: $wit;
+  width: 50px;
+  height: 60px;
+  background-image: url("../../../assets/images/vives_logo.png");
+  background-size: 50px;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: 4px 20px 0 10px;
+  display: block;
+}
+
+.btnLogin {
+  margin-right: 20px;
+  background-color: $lichtgrijs;
+}
+
+h3 {
+  margin-right: 20px;
+}
+
+.authContainer {
+  justify-content: flex-end;
+}
+
+.dropdown-item {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+
+.dropdown-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+  .btnLogin {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+
+  .dropdown-menu {
+    display: block;
+  }
+}

@@ -1,0 +1,118 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <img
+                class="mb-4"
+                src="../../../../../assets/images/vives_logo.png"
+              />
+              <!-- LOGIN TITLE -->
+              <h2 class="login-heading mb-4">
+                {{welcomeText}}
+              </h2>
+
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <!-- ERROR -->
+                <div *ngIf="isError" class="alert alert-danger">
+                  Login mislukt. Probeer eens een ander email of wachtwoord.
+                </div>
+                <div *ngIf="serverError" class="alert alert-danger">
+                  Er is iets fout gegaan, probeer later opnieuw.
+                </div>
+
+                <!-- EMAIL -->
+                <div class="form-label-group">
+                  <label for="email"></label>
+                  <input
+                    type="text"
+                    formControlName="email"
+                    class="form-control"
+                    placeholder="Email"
+                    [ngClass]="{
+                      'is-invalid': isSubmitted && form.email.errors
+                    }"
+                  />
+
+                  <div
+                    *ngIf="isSubmitted && form.email.errors"
+                    class="text-danger"
+                  >
+                    <div *ngIf="form.email.errors.required">
+                       <small>Email is verplicht</small>
+                    </div>
+                    <div *ngIf="loginForm.controls['email'].errors.pattern">
+                    <small> Gelieve een geldig emailadres in te vullen!</small>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="form-label-group">
+                  <label for="password"></label>
+                  <input
+                    type="password"
+                    formControlName="password"
+                    class="form-control"
+                    placeholder="Wachtwoord"
+                    [ngClass]="{
+                      'is-invalid': isSubmitted && form.password.errors
+                    }"
+                  />
+
+                  <div
+                    *ngIf="isSubmitted && form.password.errors"
+                    class="text-danger"
+                  >
+                    <div *ngIf="form.password.errors.required">
+                       <small>Wachtwoord invullen is verplicht!</small>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Nice to have wachtwoord onthouden -->
+                <!-- <div class="custom-control custom-checkbox mb-3">
+                      <input type="checkbox" class="custom-control-input" id="customCheck1">
+                      <label class="custom-control-label" for="customCheck1">{{"login.wwonthouden" | translate}}</label>
+                    </div> -->
+
+                <!-- LOGIN BUTTON AND LOADING GIF -->
+                <div class="form-group margin">
+                  <button
+                    *ngIf="!isLoading"
+                    [disabled]="isLoading"
+                    class="btn btn-primary"
+                  >
+                    Inloggen
+                  </button>
+                  <img
+                    *ngIf="isLoading"
+                    class="pl-2"
+                    src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                  />
+                </div>
+
+                <!-- FORGOT PASSWORD -->
+                <a routerLink="forgot-password">
+                  Wachtwoord vergeten?
+                </a>
+
+                <!-- NO ACCOUNT YET -->
+                <p class="small">
+                  Nog geen account?<a
+                    routerLink="/authentication/register"
+                    routerLinkActive="active"
+                    > Klik hier</a
+                  >
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

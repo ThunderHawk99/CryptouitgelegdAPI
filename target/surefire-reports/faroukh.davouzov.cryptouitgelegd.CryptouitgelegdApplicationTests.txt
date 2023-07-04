@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: faroukh.davouzov.cryptouitgelegd.CryptouitgelegdApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.236 s - in faroukh.davouzov.cryptouitgelegd.CryptouitgelegdApplicationTests

@@ -1,0 +1,139 @@
+h2 {
+  font-family: Arial, Verdana;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: black;
+  text-transform: uppercase;
+}
+.white {
+  color: white;
+}
+h3 {
+  font-family: Arial, Verdana;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+}
+
+.mat-expansion-panel {
+  padding: 0 !important;
+}
+.accordion-section .panel-default > .panel-heading {
+  border: 0;
+  background: #e50001;
+  padding: 0;
+  transition: transform 0.2s;
+  transition: all 0.3s ease 0s;
+}
+
+.panel-heading {
+  background-color: white !important;
+}
+
+.accordion-section .panel-default .panel-title a {
+  display: block;
+  // font-style: italic;
+  font-size: 1.2rem;
+  color: white;
+  //transition: transform .2s;
+}
+
+.accordion-section .panel-default .panel-title a:after {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-size: 3rem;
+  color: white;
+  float: right;
+  margin-top: -12px;
+}
+
+::ng-deep .mat-expansion-indicator::after {
+  color: white !important;
+}
+
+.accordion-section .panel-default .panel-title a:hover {
+  //transform: scale(1.01);
+  text-decoration: none;
+}
+.accordion-section .panel-default > .panel-heading:hover {
+  transform: scale(1.02);
+  background-color: rgb(201, 5, 5);
+  color: rgb(0, 0, 0);
+}
+
+.panel-body {
+  font-size: 1.2rem i !important;
+}
+
+.panel-body {
+  color: black;
+  margin-top: 24px !important;
+  margin-bottom: 8px !important;
+}
+
+.mat-expansion-panel-header {
+  height: 45px;
+  background-color: #007bff !important;
+}
+
+.disable-text-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.margin {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 500px) {
+  p {
+    font-size: 70%;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-size: large;
+  }
+  .panel-body {
+    font-size: 100%;
+  }
+}
+
+@media (min-width: 500px) {
+  p {
+    font-size: 65%;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-size: large;
+  }
+  .panel-body {
+    font-size: 110%;
+  }
+}
+
+@media (min-width: 700px) {
+  p {
+    font-size: 75%;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-size: xx-large;
+  }
+  .panel-body {
+    font-size: 110%;
+  }
+}
+
+@media (min-width: 1200px) {
+  p {
+    font-size: 100%;
+  }
+  .panel-body {
+    font-size: 135%;
+  }
+}

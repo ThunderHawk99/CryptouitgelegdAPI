@@ -1,0 +1,165 @@
+<form class="simple-form" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+  <!-- USERNAME -->
+  <div class="form-label-group margin">
+    <input
+      type="text"
+      formControlName="username"
+      class="form-control"
+      placeholder="Username"
+      required
+      [ngClass]="{
+        'is-invalid': isSubmitted && studentForm.controls['username'].errors
+      }"
+    />
+    <div
+      *ngIf="isSubmitted && studentForm.controls['username'].errors"
+      class="text-danger"
+    >
+      <div *ngIf="studentForm.controls['username'].errors.required">
+        <small>Username invullen is verplicht!</small>
+      </div>
+    </div>
+  </div>
+  <!-- FIRST NAME -->
+  <div class="form-label-group margin">
+    <input
+      type="text"
+      formControlName="firstName"
+      class="form-control"
+      placeholder="Voornaam"
+      required
+      [ngClass]="{
+        'is-invalid': isSubmitted && studentForm.controls['firstName'].errors
+      }"
+    />
+    <div
+      *ngIf="isSubmitted && studentForm.controls['firstName'].errors"
+      class="text-danger"
+    >
+      <div *ngIf="studentForm.controls['firstName'].errors.required">
+        <small>Voornaam invullen is verplicht!</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAME -->
+  <div class="form-label-group margin">
+    <input
+      type="text"
+      formControlName="name"
+      class="form-control"
+      placeholder="Naam"
+      required
+      [ngClass]="{
+        'is-invalid': isSubmitted && studentForm.controls['name'].errors
+      }"
+    />
+    <div
+      *ngIf="isSubmitted && studentForm.controls['name'].errors"
+      class="text-danger"
+    >
+      <div *ngIf="studentForm.controls['name'].errors.required">
+        <small>Naam invullen is verplicht!</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="form-label-group margin">
+    <input
+      type="text"
+      formControlName="email"
+      class="form-control"
+      placeholder="Email"
+      required
+      [ngClass]="{
+        'is-invalid': isSubmitted && studentForm.controls['email'].errors
+      }"
+    />
+    <div
+      *ngIf="isSubmitted && studentForm.controls['email'].errors"
+      class="text-danger"
+    >
+      <div *ngIf="studentForm.controls['email'].errors.required">
+        <small>Email invullen is verplicht!</small>
+      </div>
+      <div *ngIf="studentForm.controls['email'].errors.pattern">
+        <small>Gelieve een geldig emailadres in te vullen!</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASSWORD -->
+  <div class="form-label-group margin">
+    <input
+      type="password"
+      formControlName="password"
+      class="form-control"
+      placeholder="Wachtwoord*"
+      required
+      [ngClass]="{
+        'is-invalid': isSubmitted && studentForm.controls['password'].errors
+      }"
+    />
+    <div
+      *ngIf="isSubmitted && studentForm.controls['password'].errors"
+      class="text-danger"
+    >
+      <div *ngIf="studentForm.controls['password'].errors.required">
+        <small>Wachtwoord herhalen is verplicht!</small>
+      </div>
+      <div *ngIf="studentForm.controls['password'].errors.minlength">
+        <small>Wachtwoorden moeten gelijk zijn aan elkaar!</small>
+      </div>
+      <div *ngIf="studentForm.controls['password'].errors.minength">
+        <small>Gelieve een wachtwoord met minimum 6 karakters in te vullen!</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIRM PASSWORD -->
+  <div class="form-label-group margin">
+    <input
+      type="password"
+      formControlName="confirmPassword"
+      class="form-control"
+      placeholder="Wachtwoord herhalen*"
+      required
+      [ngClass]="{
+        'is-invalid':
+          isSubmitted && studentForm.controls['confirmPassword'].errors
+      }"
+    />
+    <div
+      *ngIf="isSubmitted && studentForm.controls['confirmPassword'].errors"
+      class="text-danger"
+    >
+      <div *ngIf="studentForm.controls['confirmPassword'].errors.required">
+         <small>Wachtwoord herhalen is verplicht!</small>
+      </div>
+      <div *ngIf="studentForm.controls['confirmPassword'].errors.minlength">
+        <small>Gelieve een wachtwoord met minimum 6 karakters in te vullen!</small>
+      </div>
+      <div *ngIf="studentForm.controls['confirmPassword'].errors.mustMatch">
+        <small>Wachtwoord herhalen is verplicht!</small>>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGISTER -->
+  <div>
+    <button
+      type="submit"
+      *ngIf="!isLoading"
+      [disabled]="isLoading"
+      class="btn btn-primary btn-block text-uppercase font-weight-bold mb-2"
+    >
+      REGISTREER voor €9.99
+    </button>
+    <img
+      *ngIf="isLoading"
+      class="pl-2"
+      src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+    />
+  </div>
+</form>

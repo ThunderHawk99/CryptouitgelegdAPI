@@ -1,0 +1,50 @@
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
+}
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url("../../../../../assets/images/login.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  letter-spacing: 0.05rem;
+  padding: 8px 20px;
+  border-radius: 40px;
+  background: #e50001;
+  border: none;
+  outline: none;
+  transition: transform 0.2s;
+  color: white;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+  transform: scale(1.1);
+  outline: 0;
+}
+
+.btn-login:active {
+  background-color: rgb(201, 5, 5);
+  border: none;
+  outline: none;
+}
+
+.margin {
+  margin-top: 15px;
+}
+
+input {
+  margin-bottom: 0 !important;
+}

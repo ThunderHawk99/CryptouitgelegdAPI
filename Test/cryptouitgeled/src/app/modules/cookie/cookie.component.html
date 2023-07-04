@@ -1,0 +1,25 @@
+<div id="sliding-popup" class="sliding-popup-bottom" *ngIf="show">
+  <div class="popup-content info">
+    <div id="popup-text">
+      <p class="removeMarginbottom">
+        Crypto Uitgelegd maakt gebruik van noodzakelijke cookies. Klik op Akkoord om in te stemmen met het gebruik van deze cookies of op Meer weten voor onze privacyverklaring.
+      </p>
+    </div>
+    <div id="popup-buttons">
+      <button
+        type="button"
+        class="agree-button eu-cookie-compliance-secondary-button btn-primary"
+        (click)="btnClick(true)"
+      >
+        Akkoord
+      </button>
+      <button
+        type="button"
+        routerLink="/policy"
+        class="decline-button eu-cookie-compliance-default-button btn-primary"
+      >
+        Meer weten
+      </button>
+    </div>
+  </div>
+</div>

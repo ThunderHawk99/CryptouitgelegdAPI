@@ -1,0 +1,73 @@
+<div class="errorContainer" *ngIf="isError && !isLoading">
+    <span>{{errorMessage}}</span>
+</div>
+
+<div class="errorContainer" *ngIf="isLoading">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+
+<div class="filterContainer">
+    <div class="topicsContainer">
+        <h3>Topics</h3>
+        <div [ngStyle]="{'opacity': (tag.isActive) ? 1 : 0.6}" (click)="onClickTag(tag)" class="topic" *ngFor="let tag of tags">
+            {{tag.name}}
+            <i *ngIf="!tag.isActive" style="font-size: 10px" class="fa fa-thin fa-plus"></i>
+            <i *ngIf="tag.isActive" style="font-size: 10px" class="fa fa-solid fa-check"></i>
+        </div>
+        <div class="input-group">
+            <div class="form-outline" aria-placeholder="Zoek op titel">
+                <input type="search" id="form1" class="form-control" [(ngModel)]="titleFilter" placeholder="Zoek op titel"/>
+                <label aria-placeholder="Zoek op titel" class="form-label" for="form1"></label>
+            </div>
+            <button (click)="searchOnTitle()" type="button" class="btn btn-primary">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="optionsGlobalContainer">
+    <div class="optionsContainer">
+        <div style="display: inline-block; margin-right: 10px;">Layout</div>
+        <i (click)="switchToGrid()" [ngClass]="{'listLayoutActive' : !isListLayout, 'listLayoutDisabled': isListLayout}" style="margin-right: 10px" class="fa fa-th" aria-hidden="true"></i>
+        <i *ngIf="!isMobile" (click)="switchToList()" [ngClass]="{'listLayoutActive' : isListLayout, 'listLayoutDisabled': !isListLayout}" style="margin-right: 30px;" class="fa fa-list"></i>
+        <div (click)="filterOnTags()" [ngClass]="{'applyFilterActive' : hasActiveTag()}" class="applyFilterDisabled">Apply filters</div>    
+        <div (click)="clearFilterTags()" class="clearFilter">Clear filters</div>            
+    </div>
+</div>
+
+<div *ngIf="!isError && !isLoading && (!isListLayout || isMobile)" class="container rowContainer">
+    <div *ngFor="let article of articles | slice: lowValue:highValue">
+        <app-article-preview
+            *ngIf="!isListLayout"
+            [routerLink]='["/articles/full/", article.body.id]'
+            [title]="article.title"
+            [imgSource]="article.image">
+        </app-article-preview>
+    </div>
+</div>
+
+<div *ngIf="!isError && !isLoading && isListLayout && !isMobile" class="container" style="grid-template-columns: 1fr;">
+    <div *ngFor="let article of articles | slice: lowValue:highValue">
+        <app-article-preview-list
+            *ngIf="isListLayout"
+            [routerLink]='["/articles/full/", article.body.id]'
+            [title]="article.title"
+            [description]="article.description"
+            [imgSource]="article.image">
+        </app-article-preview-list>
+    </div>
+</div>
+
+<div fxLayout fxLayoutAlign="center center">
+    <mat-paginator
+        class="topPaginator"
+        #topPaginator
+        [length]="this.articles.length"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        (page)="getPaginatorData($event)"
+    >
+    </mat-paginator>
+</div>
+

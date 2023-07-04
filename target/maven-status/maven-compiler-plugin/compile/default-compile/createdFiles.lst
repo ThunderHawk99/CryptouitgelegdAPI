@@ -1,0 +1,12 @@
+faroukh\davouzov\cryptouitgelegd\api\UserResource.class
+faroukh\davouzov\cryptouitgelegd\api\UserResource$RoleToUserForm.class
+faroukh\davouzov\cryptouitgelegd\filter\CustomAuthenticationFilter.class
+faroukh\davouzov\cryptouitgelegd\filter\CustomAuthorizationFilter.class
+faroukh\davouzov\cryptouitgelegd\service\UserService.class
+faroukh\davouzov\cryptouitgelegd\repository\UserRepository.class
+faroukh\davouzov\cryptouitgelegd\domain\User.class
+faroukh\davouzov\cryptouitgelegd\repository\RoleRepository.class
+faroukh\davouzov\cryptouitgelegd\security\SecurityConfig.class
+faroukh\davouzov\cryptouitgelegd\CryptouitgelegdApplication.class
+faroukh\davouzov\cryptouitgelegd\service\UserServiceImpl.class
+faroukh\davouzov\cryptouitgelegd\domain\Role.class

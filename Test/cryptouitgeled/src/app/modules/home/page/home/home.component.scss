@@ -1,0 +1,53 @@
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url("../../../../../assets/images/home.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container {
+  margin-top: -80px;
+  margin-bottom: 0;
+}
+
+h1 {
+  color: white;
+  font-size: 50px;
+}
+
+.wit {
+  color: white;
+}
+
+.btn-primary {
+  box-shadow: none;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 40px;
+  background: #e50001;
+  margin-right: 5px;
+  margin-top: 20px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+
+.btn:hover {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  color: rgb(0, 0, 0);
+  transform: translateY(-7px);
+}
+
+.jumbotron {
+  background: rgba(0, 0, 0, 0.171);
+}
+#filter {
+  padding-top: 100px;
+}
+
+@media only screen and (max-width: 992px) {
+  h1 {
+    font-size: 35px;
+  }
+}

@@ -1,0 +1,9 @@
+<div class="container">
+    <h1 *ngIf="isError">Er ging iets mis. Contacteer de admin</h1>
+    <h1 *ngIf="isPaymentError">Er ging iets mis met de betaling. Probeer opnieuw</h1>
+
+    <h1 *ngIf="!isError">Kies uw betaalmethode</h1>
+    <div class="globalContainer" #paypal>
+
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <img
+                class="mb-4"
+                src="../../../../../../../assets/images/vives_logo.png"
+              />
+              <h2 class="login-heading mb-4">
+                Maak hier uw account!
+              </h2>
+              <div
+                class="btn-group btnContainer margin"
+                role="group"
+                aria-label="Basic example"
+              >
+              </div>
+              <div *ngIf="isError" class="alert alert-danger">
+                Er is iets fout gegaan, probeer later opnieuw.
+              </div>
+              <div *ngIf="isErrorEmailAlreadyTaken" class="alert alert-danger">
+                Email bestaat al
+              </div>
+              <div *ngIf="isErrorUserNameAlreadyTaken" class="alert alert-danger">
+                Username bestaat al
+              </div>
+              <div>
+                <app-register-subscriber
+                  #registerStudent
+                  (register)="onRegister($event)"
+                  [isLoading]="false"
+                ></app-register-subscriber>
+              </div>
+
+              <!-- Register Company -->
+              <!-- <ng-template #showCompany>
+                <app-register-company
+                  #registerCompany
+                  (register)="onRegister($event)"
+                  (notifyParentOfServerError)="catchServerError($event)"
+                ></app-register-company>
+              </ng-template> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

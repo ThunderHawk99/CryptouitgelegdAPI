@@ -1,0 +1,35 @@
+mat-card {
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0px 0px 1px rgb(20 21 26 / 10%), 0px 7px 14px rgb(71 77 87 / 8%), 0px 3px 6px rgb(20 21 26 / 8%)
+}
+  
+mat-card:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.globalContainer {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.image {
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 133px;
+min-width: 237px;
+max-height: 133px;
+max-width: 237px;
+border-radius: 16px;
+}
